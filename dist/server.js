@@ -11,6 +11,6 @@ Promise.all([new Database_1.default().openConnection(), new redis_1.Redis().open
     .then(() => {
     const app = new app_1.default();
     app.init();
-    app.start(8080);
+    app.start(Number(process.env.PORT) || 8080);
 })
     .catch(console.error);
